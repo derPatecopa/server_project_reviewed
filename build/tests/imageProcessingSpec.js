@@ -12,11 +12,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const supertest_1 = __importDefault(require("supertest"));
-const index_1 = __importDefault(require("../index"));
-describe("API endpoint testing", () => {
-    it("Should return 200 and correct response for endpoint /api", () => __awaiter(void 0, void 0, void 0, function* () {
-        const res = yield (0, supertest_1.default)(index_1.default).get("/api");
-        expect(res.statusCode).toBe(200);
+const images_1 = __importDefault(require("../routes/api/images"));
+it("gets the filename, the height and the width from url parameters", () => {
+    images_1.default.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        const filename = req.query.filename;
+        const width = req.query.width;
+        const height = req.query.height;
+        expect(filename).toBe(typeof String);
+        expect(width).toBe(typeof Number);
+        expect(height).toBe(typeof Number);
     }));
 });

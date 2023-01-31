@@ -13,14 +13,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const sharp_1 = __importDefault(require("sharp"));
+//creating cache of object type string
+const cache = {};
 //turning the imageProcessing into async function to wait for the response in images.ts
 const imageProcessing = (filename, width, height, filepath, thumbpath) => __awaiter(void 0, void 0, void 0, function* () {
+    //checking if image already stored
+    const cacheKey = `${filename},${width},${height}`;
+    if (cache[cacheKey]) {
+        console.log(`thumbnail ${cache[cacheKey]} already in cache`);
+        return cache[cacheKey];
+    }
     //added try catch block, when Promise is not resolved but rejected
     try {
-        yield (0, sharp_1.default)(filepath)
-            .resize(width, height)
-            .toFile(`${thumbpath}/thumb${filename}.jpg`);
-        return `${thumbpath}/thumb${filename}.jpg`;
+        const thumbnail = `${thumbpath}/thumb${filename}.jpg`;
+        yield (0, sharp_1.default)(filepath).resize(width, height).toFile(thumbnail);
+        cache[cacheKey] = thumbnail;
+        return thumbnail;
     }
     catch (error) {
         console.error(error);
@@ -28,17 +36,3 @@ const imageProcessing = (filename, width, height, filepath, thumbpath) => __awai
     }
 });
 exports.default = imageProcessing;
-// routes.get("/", (req, res) => {
-//     res.send("This is images route");
-//     console.log(typeof req);
-//     const filename = req.query.filename;
-//     //test candidates for jasmine width and height to be tested for type
-//     const width = Number(req.query.width);
-//     const height = Number(req.query.height);
-//     console.log(filename, width, height);
-//     const filepath = `${fullpath}/${filename}.jpg`;
-//     //console.log(filepath);
-//     sharp(filepath)
-//       .resize(width, height)
-//       .toFile(`${thumbpath}/thumb${filename}.jpg`);
-//   });

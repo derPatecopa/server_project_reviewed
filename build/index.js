@@ -14,7 +14,3 @@ app.listen(port, () => {
     console.log(`server started at http://localhost:${port}`);
 });
 exports.default = app;
-// const testfunction = (word: string): string => {
-//   return word;
-// };
-// export default testfunction;
