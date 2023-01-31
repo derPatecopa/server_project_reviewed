@@ -1,1 +1,1 @@
-import imageroutes from "../routes/api/images";
+import imageProcessing from "../utilities/imageProcessing";
