@@ -29,17 +29,3 @@ const imageProcessing = async (
 };
 
 export default imageProcessing;
-// routes.get("/", (req, res) => {
-//     res.send("This is images route");
-//     console.log(typeof req);
-//     const filename = req.query.filename;
-//     //test candidates for jasmine width and height to be tested for type
-//     const width = Number(req.query.width);
-//     const height = Number(req.query.height);
-//     console.log(filename, width, height);
-//     const filepath = `${fullpath}/${filename}.jpg`;
-//     //console.log(filepath);
-//     sharp(filepath)
-//       .resize(width, height)
-//       .toFile(`${thumbpath}/thumb${filename}.jpg`);
-//   });

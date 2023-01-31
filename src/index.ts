@@ -4,8 +4,7 @@ const app = express();
 const port = 3000;
 
 //using app with routes
-app.use("/api",mainroutes);
-
+app.use("/api", mainroutes);
 
 // start the Express server
 app.listen(port, () => {
@@ -13,9 +12,3 @@ app.listen(port, () => {
 });
 
 export default app;
-
-// const testfunction = (word: string): string => {
-//   return word;
-// };
-
-// export default testfunction;
