@@ -3,3 +3,5 @@
 3. enter url paramters of format http://localhost:3000/api/images?filename=&width=&height=
     a) filenames need to be taken from given pictures from folder ./images/full you can also upload your own .jpg 
 4. processed image can be found in the browser, console.log statement will tell if the thumbnail is a new one or is already in cache
+5. should give an error message when there is an incorrect filename on the console
+6. test can be run with $ npm run test (there is only one small test)
