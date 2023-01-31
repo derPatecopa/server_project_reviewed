@@ -1,0 +1,1 @@
+import imageroutes from "../routes/api/images";
