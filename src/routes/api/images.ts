@@ -16,6 +16,7 @@ routes.get("/", async (req, res) => {
   //creating necessary variable for imageProcessing with .query from given URL
   //casting them into the required format
   const filename = String(req.query.filename);
+  console.log(typeof filename)
   //test candidates for jasmine width and height to be tested for type
   const width = Number(req.query.width);
   const height = Number(req.query.height);

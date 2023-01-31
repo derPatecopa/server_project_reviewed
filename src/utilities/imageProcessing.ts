@@ -1,5 +1,7 @@
 import sharp from "sharp";
+import fs from "fs";
 
+const cache: Record<string, string> = {}
 //turning the imageProcessing into async function to wait for the response in images.ts
 const imageProcessing = async (
   filename: string,
@@ -8,12 +10,18 @@ const imageProcessing = async (
   filepath: string,
   thumbpath: string
 ): Promise<string> => {
+  const cacheKey = `${filename}-${width}-${height}`;
+  if (cache[cacheKey]) {
+    return cache[cacheKey]
+  }
   //added try catch block, when Promise is not resolved but rejected
   try {
+    const thumbnail = `${thumbpath}/thumb${filename}.jpg`;
     await sharp(filepath)
       .resize(width, height)
-      .toFile(`${thumbpath}/thumb${filename}.jpg`);
-    return `${thumbpath}/thumb${filename}.jpg`;
+      .toFile(thumbnail);
+      cache[cacheKey] = thumbnail;
+    return thumbnail;
   } catch (error) {
     console.error(error);
     return Promise.reject(error);
