@@ -60,7 +60,7 @@ Although not a requirement, we recommend using Git from the very beginning if yo
 
 [License](LICENSE.txt)
 
-#Documentation
+## Documentation
 
 1. start the server in the console with $ npm run start
 2. visit http://localhost:3000/api/images in your preferred browser (make sure to turn of ad block)
@@ -69,7 +69,7 @@ Although not a requirement, we recommend using Git from the very beginning if yo
 4. processed image can be found in the browser, console.log statement will tell if the thumbnail is a new one or is already in cache
 5. should give an error message when there is an incorrect filename on the console
 6. test can be run with $ npm run test 
-7. Endpoint testing for /api returns 200 as status code
+7. Endpoint testing for /api/image returns 200 as status code, failures for missing or wrong parameters return 400
 8. scripts to run the code:
 npm run 
     start

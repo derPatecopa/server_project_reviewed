@@ -2,7 +2,6 @@ import express from "express";
 import imageProcessor from "../../utilities/imageProcessing";
 import fs from "fs";
 
-
 const routes = express.Router();
 const fullpath = "images/full";
 const thumbpath = "images/thumb";
@@ -14,7 +13,7 @@ routes.get("/", async (req, res) => {
   //casting them into the required format
   const filename = String(req.query.filename);
   if (!filename) {
-    return res.status(400).send({error: "filename is required"})
+    return res.status(400).send({ error: "filename is required" });
   }
   if (!fs.existsSync(`images/full/${filename}.jpg`)) {
     return res.status(400).send({ error: "file not found" });
@@ -45,5 +44,3 @@ routes.get("/", async (req, res) => {
 });
 
 export default routes;
-
-
