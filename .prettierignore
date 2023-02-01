@@ -1,0 +1,4 @@
+build/
+images/
+node_modules/
+spec/

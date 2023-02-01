@@ -29,9 +29,3 @@ steps taken in writing this code:
 - added routing 
 - unit testing with jasmine
 - code logic for processing the image
-
-Feedback from review to tackle:
-Setup and Architecture:
-    - exclude node_modules and build folder 
-        created .gitignore and deleted folders from repository
-    - 
