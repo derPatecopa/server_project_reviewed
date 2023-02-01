@@ -18,7 +18,7 @@ const imageProcessing = async (
   }
   //added try catch block, when Promise is not resolved but rejected
   try {
-    const thumbnail = `${thumbpath}/thumb${filename}.jpg`;
+    const thumbnail = `${thumbpath}/thumb_${filename}_${width}_${height}.jpg`;
     await sharp(filepath).resize(width, height).toFile(thumbnail);
     cache[cacheKey] = thumbnail;
     return thumbnail;
