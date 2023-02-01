@@ -47,10 +47,3 @@ routes.get("/", async (req, res) => {
 export default routes;
 
 
-//Test for API endpoint testing
-
-// routes.get("/", (req, res) => {
-//   res.send("This is images route");
-// });
-
-// export default routes;
