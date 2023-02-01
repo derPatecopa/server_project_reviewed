@@ -8,7 +8,8 @@
     "log": "npm run build && node build/index.js",
     "jasmine": "jasmine",
     "build": "npx tsc",
-    "test": "npm run build && npm run jasmine"
+    "test": "npm run build && npm run jasmine",
+    "lint": "**/*.ts"
   },
   "repository": {
     "type": "git",
