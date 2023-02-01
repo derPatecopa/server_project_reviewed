@@ -6,11 +6,17 @@ const testFileName = "fjord";
 const testWidth = "200";
 const testHeight = "300";
 
-const errorFileName = "hans";
+const errorFileName = "test";
 const errorWidth = "";
 const errorHeight = "";
 
 describe("API endpoint testing", () => {
+  it("Should return 200 for endpoint /api", async () => {
+    const res = await request(app).get(
+      "/api"
+    );
+    expect(res.statusCode).toBe(200);
+  });
   it("Should return 200 endpoint /api/images with given testparameters", async () => {
     const res = await request(app).get(
       `${baseUrl}?filename=${testFileName}&width=${testWidth}&height=${testHeight}`
