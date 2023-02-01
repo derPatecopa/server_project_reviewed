@@ -59,3 +59,37 @@ Although not a requirement, we recommend using Git from the very beginning if yo
 ## License
 
 [License](LICENSE.txt)
+
+#Documentation
+
+1. start the server in the console with $ npm run start
+2. visit http://localhost:3000/api/images in your preferred browser (make sure to turn of ad block)
+3. enter url paramters of format http://localhost:3000/api/images?filename=&width=&height=
+    a) filenames need to be taken from given pictures from folder ./images/full you can also upload your own .jpg 
+4. processed image can be found in the browser, console.log statement will tell if the thumbnail is a new one or is already in cache
+5. should give an error message when there is an incorrect filename on the console
+6. test can be run with $ npm run test 
+7. scripts to run the code: "scripts": {
+    "start": "nodemon src/index.ts",
+    "log": "npm run build && node build/index.js",
+    "jasmine": "jasmine",
+    "build": "npx tsc",
+    "test": "npm run build && npm run jasmine"
+  }
+steps taken in writing this code:
+
+- initialized typescript
+- installed and configured neccessary packages:
+    - express (server)
+    - nodemon (auto restarts server on every change)
+    - jasmine (unit testing)
+    - sharp (image processing)
+    - eslint (linting)
+    - prettier (code formatting)
+    - supertest (endpoint testing)
+- written neccessary scripts in package.json 
+- git version control
+- set up a server
+- added routing 
+- unit testing with jasmine
+- code logic for processing the image
