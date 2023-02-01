@@ -12,9 +12,7 @@ const errorHeight = "";
 
 describe("API endpoint testing", () => {
   it("Should return 200 for endpoint /api", async () => {
-    const res = await request(app).get(
-      "/api"
-    );
+    const res = await request(app).get("/api");
     expect(res.statusCode).toBe(200);
   });
   it("Should return 200 endpoint /api/images with given testparameters", async () => {
