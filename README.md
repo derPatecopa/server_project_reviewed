@@ -62,7 +62,7 @@ Although not a requirement, we recommend using Git from the very beginning if yo
 
 ## Documentation
 
-1. start the server in the console with $ npm run start
+1. start the server in the console with $ npm run start (if not working right away, run $npm i nodemon)
 2. visit http://localhost:3000/api/images in your preferred browser (make sure to turn of ad block)
 3. enter url paramters of format http://localhost:3000/api/images?filename=&width=&height=
     a) filenames need to be taken from given pictures from folder ./images/full you can also upload your own .jpg 
