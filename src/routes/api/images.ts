@@ -19,14 +19,13 @@ routes.get("/", async (req, res) => {
     return res.status(400).send({ error: "file not found" });
   }
   //console.log(typeof filename)
-  //test candidates for jasmine width and height to be tested for type
   const width = Number(req.query.width);
-  if (!width) {
-    return res.status(400).send({ error: "width is required" });
+  if (!width || width <= 0) {
+    return res.status(400).send({ error: "please provide correct or missing width input" });
   }
   const height = Number(req.query.height);
-  if (!height) {
-    return res.status(400).send({ error: "height is required" });
+  if (!height || width <= 0) {
+    return res.status(400).send({ error: "please provide correct or missing hieght input" });
   }
   const filepath = `${fullpath}/${filename}.jpg`;
   if (!filepath) {

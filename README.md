@@ -99,8 +99,8 @@ steps taken in writing this code:
 - code logic for processing the image
 
 ## Reviewed steps: 
-Suggestion: Don't include the node modules on your GitHub/submission
-   => ignored node_modules and build folder
+[Suggestion] Don't include the node modules on your GitHub/submission
+   => ignored /node_modules and /build folder
 
 [Required] Create the correct scripts 
    => added linting and prettier scripts
@@ -113,6 +113,9 @@ Suggestion: Don't include the node modules on your GitHub/submission
 
 [Required] Save and serve the resized image
    => created a caching logic (checking if file already exists) and renamed stored images including height and width
+
+[Required] Handle the API request errors properly
+   => wrote error handling for missing values and wrong filenames
 
  [Required] Create one test per endpoint
    => added one test per endpoint (/api and /api/images)
