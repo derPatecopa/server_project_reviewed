@@ -8,7 +8,7 @@ const thumbpath = "images/thumb/";
 
 // making req and res async, so that the file is not sent, before the image is processed
 routes.get("/", async (req, res) => {
-  console.log(req.query);
+  //console.log(req.query);
   //creating necessary variable for imageProcessing with .query from given URL
   //casting them into the required format
   const filename = String(req.query.filename);
@@ -39,7 +39,7 @@ routes.get("/", async (req, res) => {
     filepath,
     thumbpath
   );
-  console.log(thumbnail);
+  //console.log(thumbnail);
   //root gives current working directory (cwd)
   res.sendFile(`${thumbpath}${thumbnail}`, { root: process.cwd() });
 });

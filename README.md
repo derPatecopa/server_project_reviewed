@@ -69,7 +69,7 @@ Although not a requirement, we recommend using Git from the very beginning if yo
 4. processed image can be found in the browser, console.log statement will tell if the thumbnail is a new one or is already in cache
 5. should give an error message when there is an incorrect filename on the console
 6. test can be run with $ npm run test 
-7. Endpoint testing for /api/image returns 200 as status code, failures for missing or wrong parameters return 400
+7. Endpoint testing for /api and api/image returns 200 as status code, failures for missing or wrong parameters return 400
 8. scripts to run the code:
 npm run 
     start
@@ -97,3 +97,33 @@ steps taken in writing this code:
 - added routing 
 - unit testing with jasmine
 - code logic for processing the image
+
+## Reviewed steps: 
+Suggestion: Don't include the node modules on your GitHub/submission
+   => ignored node_modules and build folder
+
+[Required] Create the correct scripts 
+   => added linting and prettier scripts
+
+[Required] Fix your build script
+   => npm run build runs without errors (but so did it before)
+
+[Required] Provide a working endpoint in the readme file
+   => documented working endpoint testing in readme file
+
+[Required] Save and serve the resized image
+   => created a caching logic (checking if file already exists) and renamed stored images including height and width
+
+ [Required] Create one test per endpoint
+   => added one test per endpoint (/api and /api/images)
+
+[Required] Create a test for image processing
+   => added test for image processing, tests for 
+
+[Required] Have properly typed parameters with return types
+   => all parameters have types and properly return types
+
+[Required] Provide a correct Prettier and Linting script
+   => scripts for linting and prettier have beend added (see above)
+
+

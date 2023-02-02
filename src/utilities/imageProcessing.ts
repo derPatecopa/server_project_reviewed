@@ -1,10 +1,6 @@
 import sharp from "sharp";
 import fs from "fs";
 
-//creating cache instance
-const cache: Record<string, string> = {};
-
-
 //turning the imageProcessing into async function to wait for the response in images.ts
 const imageProcessing = async (
   filename: string,
@@ -19,18 +15,16 @@ const imageProcessing = async (
     if (!fs.existsSync(`${thumbpath}`)) {
       fs.mkdirSync(`${thumbpath}`);
     }
-    console.log("This is thumbnail: " + thumbnail);
-    // for (const key in cache) {
-    //   console.log("This is Key: " + key);
-    // }
+    //console.log("This is thumbnail: " + thumbnail);
     //checking for already stored image
-    if (!(cache[thumbnail] === "cached")) {
+    //console.log("This is the value for existsSync " + fs.existsSync(`${thumbpath}${thumbnail}`))
+    if(!(fs.existsSync(`${thumbpath}${thumbnail}`))) {
       await sharp(filepath)
         .resize(width, height)
         .toFile(`${thumbpath}${thumbnail}`);
-        const cacheKey = `${thumbnail}`;
-    cache[cacheKey] = `cached`;
-    }
+        console.log("New Thumbnail File successfully created");
+    } else {
+    console.log("File loaded from cache");}
     return thumbnail;
   } catch (error) {
     console.error(error);
