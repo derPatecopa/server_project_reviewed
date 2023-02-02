@@ -4,7 +4,7 @@ import fs from "fs";
 
 const routes = express.Router();
 const fullpath = "images/full";
-const thumbpath = "images/thumb";
+const thumbpath = "images/thumb/";
 
 // making req and res async, so that the file is not sent, before the image is processed
 routes.get("/", async (req, res) => {
@@ -39,8 +39,9 @@ routes.get("/", async (req, res) => {
     filepath,
     thumbpath
   );
+  console.log(thumbnail);
   //root gives current working directory (cwd)
-  res.sendFile(thumbnail, { root: process.cwd() });
+  res.sendFile(`${thumbpath}${thumbnail}`, { root: process.cwd() });
 });
 
 export default routes;
