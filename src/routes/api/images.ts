@@ -21,11 +21,19 @@ routes.get("/", async (req, res) => {
   //console.log(typeof filename)
   const width = Number(req.query.width);
   if (!width || width <= 0) {
-    return res.status(400).send({ error: "please provide correct or missing width input" });
+    return res
+      .status(400)
+      .send({
+        error: `Your input for width: ${width} is not correct or missing, please provide correct input`,
+      });
   }
   const height = Number(req.query.height);
-  if (!height || width <= 0) {
-    return res.status(400).send({ error: "please provide correct or missing hieght input" });
+  if (!height || height <= 0) {
+    return res
+      .status(400)
+      .send({
+        error: `Your input for width: ${height} is not correct or missing, please provide correct input`,
+      });
   }
   const filepath = `${fullpath}/${filename}.jpg`;
   if (!filepath) {

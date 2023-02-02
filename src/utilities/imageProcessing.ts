@@ -18,13 +18,14 @@ const imageProcessing = async (
     //console.log("This is thumbnail: " + thumbnail);
     //checking for already stored image
     //console.log("This is the value for existsSync " + fs.existsSync(`${thumbpath}${thumbnail}`))
-    if(!(fs.existsSync(`${thumbpath}${thumbnail}`))) {
+    if (!fs.existsSync(`${thumbpath}${thumbnail}`)) {
       await sharp(filepath)
         .resize(width, height)
         .toFile(`${thumbpath}${thumbnail}`);
-        console.log("New Thumbnail File successfully created");
+      console.log("New Thumbnail File successfully created");
     } else {
-    console.log("File loaded from cache");}
+      console.log("File loaded from cache");
+    }
     return thumbnail;
   } catch (error) {
     console.error(error);

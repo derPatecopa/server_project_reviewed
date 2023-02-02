@@ -121,7 +121,7 @@ steps taken in writing this code:
    => added one test per endpoint (/api and /api/images)
 
 [Required] Create a test for image processing
-   => added test for image processing, tests for 
+   => added test for image processing, tests for getting correct parameters and their respective tpyes
 
 [Required] Have properly typed parameters with return types
    => all parameters have types and properly return types
