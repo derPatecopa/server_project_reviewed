@@ -128,3 +128,8 @@ steps taken in writing this code:
 
 [Required] Provide a correct Prettier and Linting script
    => scripts for linting and prettier have beend added (see above)
+
+   ## 2nd Review steps taken: 
+   [Required] Create a test for image processing
+      => added a test that checks if imageProcessing is being processed with test parameters
+   
