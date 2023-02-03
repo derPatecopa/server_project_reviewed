@@ -8,10 +8,8 @@ const testFilePath = "images/full/encenadaport.jpg";
 const testThumbPath = "images/thumb/";
 const testThumbFile = `thumb_${testFileName}_${testWidth}_${testHeight}.jpg`;
 
-
-
-describe("Tests the imageProcessing", () => {
-  it("generates a testfile with imageProcessing", () => {
+fdescribe("Tests the imageProcessing", () => {
+  it("generates a testfile with imageProcessing", async () => {
     if (fs.existsSync(`${testThumbPath}${testThumbFile}`)) {
       console.log(`File ${testThumbPath}${testThumbFile} exists`);
       fs.unlink(`${testThumbPath}${testThumbFile}`, (err) => {
@@ -19,12 +17,14 @@ describe("Tests the imageProcessing", () => {
       });
       console.log(`File ${testThumbPath}${testThumbFile} has been deleted`);
     }
-    imageProcessing(
+    const thumbnail = await imageProcessing(
       testFileName,
       testWidth,
       testHeight,
       testFilePath,
       testThumbPath
-    )
+    );
+    expect(thumbnail).toBe(testThumbFile);
+    expect(fs.existsSync(`${testThumbPath}${testThumbFile}`)).toBe(true);
   });
 });

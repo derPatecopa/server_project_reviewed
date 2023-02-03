@@ -129,7 +129,15 @@ steps taken in writing this code:
 [Required] Provide a correct Prettier and Linting script
    => scripts for linting and prettier have beend added (see above)
 
-   ## 2nd Review steps taken: 
-   [Required] Create a test for image processing
-      => added a test that checks if imageProcessing is being processed with test parameters
+## 2nd Review steps taken: 
+[Required] Create a test for image processing
+   => added a test that checks if imageProcessing is being processed with test parameters
+   => put images test to its own Spec file
+
+[Required] Have properly typed parameters with return types
+   => reviewed types for images.ts, did not add types everywhere since esllint is stating, that adding some types is trivial and can be removed (e.g. images.ts for the width constant saying: Type number trivially inferred from a number literal, remove type annotation.)
+   => reviewed types for the route modules, thouhgt about adding types for res and req and their return types but since this was never done in all the tutorials I am not sure if this is the type safety you are asking for?
+   => reviewed types for imageProcessing, couldnt find anymore necessary types, please tell me if I am wrong here
+   => reviewed types for imageProcessingSpec.ts, did not add types for constants since its trivial regarding eslint, 
+
    

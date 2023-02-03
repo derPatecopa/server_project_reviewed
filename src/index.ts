@@ -1,6 +1,6 @@
-import express from "express";
+import express, {Application} from "express";
 import mainroutes from "./routes/mainroutes";
-const app = express();
+const app: Application = express();
 const port = 3000;
 
 //using app with routes
