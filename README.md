@@ -135,9 +135,13 @@ steps taken in writing this code:
    => put images test to its own Spec file
 
 [Required] Have properly typed parameters with return types
-   => reviewed types for images.ts, did not add types everywhere since esllint is stating, that adding some types is trivial and can be removed (e.g. images.ts for the width constant saying: Type number trivially inferred from a number literal, remove type annotation.)
-   => reviewed types for the route modules, thouhgt about adding types for res and req and their return types but since this was never done in all the tutorials I am not sure if this is the type safety you are asking for?
-   => reviewed types for imageProcessing, couldnt find anymore necessary types, please tell me if I am wrong here
-   => reviewed types for imageProcessingSpec.ts, did not add types for constants since its trivial regarding eslint, 
+   => all code in SRC folder use .ts filetype
+   => import and export is used for modules
+   => build script successfully compiles TS to JS
+   => the point were I am not sure about is that functions should include typed parameters and return types and not use the any type
+   Since I have turned on the noImplicityAny in my tsconfig file, I dont see any implicit any types
+   Also I am not sure if you mean to implement these types also in the test files? Since this was not really done in the tutorials. The tests already rely on the type safety of the functions that are tested dont they?
+   There are no types for routes added since it was never done in the tutorial also, if that is the problem your are pointing add. Should i add types there?
+   I went through all my files and could not really find the missing type safety. Could you please provide me with some more details about this issue?
 
    
