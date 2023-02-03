@@ -8,7 +8,7 @@ const testFilePath = "images/full/encenadaport.jpg";
 const testThumbPath = "images/thumb/";
 const testThumbFile = `thumb_${testFileName}_${testWidth}_${testHeight}.jpg`;
 
-fdescribe("Tests the imageProcessing", () => {
+describe("Tests the imageProcessing", () => {
   it("generates a testfile with imageProcessing", async () => {
     if (fs.existsSync(`${testThumbPath}${testThumbFile}`)) {
       console.log(`File ${testThumbPath}${testThumbFile} exists`);
