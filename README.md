@@ -128,5 +128,3 @@ steps taken in writing this code:
 
 [Required] Provide a correct Prettier and Linting script
    => scripts for linting and prettier have beend added (see above)
-
-

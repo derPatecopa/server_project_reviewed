@@ -19,23 +19,19 @@ routes.get("/", async (req, res) => {
     return res.status(400).send({ error: "file not found" });
   }
   //console.log(typeof filename)
-  const width = Number(req.query.width);
+  const width: number | undefined = Number(req.query.width);
   if (!width || width <= 0) {
-    return res
-      .status(400)
-      .send({
-        error: `Your input for width: ${width} is not correct or missing, please provide correct input`,
-      });
+    return res.status(400).send({
+      error: `Your input for width: ${width} is not correct or missing, please provide correct input`,
+    });
   }
-  const height = Number(req.query.height);
+  const height: number | undefined = Number(req.query.height);
   if (!height || height <= 0) {
-    return res
-      .status(400)
-      .send({
-        error: `Your input for width: ${height} is not correct or missing, please provide correct input`,
-      });
+    return res.status(400).send({
+      error: `Your input for width: ${height} is not correct or missing, please provide correct input`,
+    });
   }
-  const filepath = `${fullpath}/${filename}.jpg`;
+  const filepath: string | undefined = `${fullpath}/${filename}.jpg`;
   if (!filepath) {
     return res.status(400).send({ error: "filepath is required" });
   }
